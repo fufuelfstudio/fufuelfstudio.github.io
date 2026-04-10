@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- [SEO] 核心權威標籤 -->
+    <title>感知小精靈浮浮感知 Elf | 官方網站 - 來自雲端的日常療癒</title>
+    <meta name="description" content="感知小精靈浮浮感知 Elf 官方網站。探索療癒系動漫 IP 的溫暖世界，提供 LINE 貼圖下載、療癒漫畫連載。加入感知夥伴計畫，獲取專屬數位周邊。">
+    <meta name="keywords" content="感知小精靈, 浮浮, Fufu Elf, 療癒系, 動漫IP, LINE貼圖, 漫畫連載, 角色設計, 數位周邊, 雲端精靈">
+    <link rel="canonical" href="https://fufuelf.com/">
+    <meta name="theme-color" content="#e0f2f7">
+
+    <!-- [Favicon] 網站分頁圖示與 Apple 設備圖示 -->
+    <link rel="icon" type="image/jpeg" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/favicon.png">
+
+    <!-- [Social] 社群傳播優化 (Open Graph & Twitter Cards) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="感知小精靈浮浮感知 Elf - 感知溫暖的瞬間">
+    <meta property="og:description" content="來自雲端的浮浮，透過心形耳朵感知你的情緒變化。立即加入浮浮的療癒世界。">
+    <meta property="og:image" content="img/cover.png">
+    <meta property="og:url" content="https://fufuelf.com/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="img/poster_v2.png">
+
+    <!-- [Font] 日系字體與圖示庫 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- [Tailwind Config] 品牌設計規範與客製化動畫 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fufuBlue: '#e0f2f7',   /* 品牌淺藍 */
+                        fufuPink: '#fdf2f8',   /* 品牌淺粉 */
+                        fufuWarm: '#fffbf7',   /* 品牌暖白背景 */
+                        fufuText: '#3d3d3d',   /* 主要文字深灰色 */
+                        fufuCyan: '#0ea5e9',   /* 強調色：青色 */
+                        lineGreen: '#06C755',  /* LINE 官方綠色 */
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans TC', 'sans-serif'],
+                        maru: ['Zen Maru Gothic', 'sans-serif'],
+                    },
+                    animation: {
+                        'float-slow': 'float 10s ease-in-out infinite',
+                        'spin-slow': 'spin 12s linear infinite',
+                        'float-up': 'floatUp 1.5s ease-out forwards', /* 愛心噴發動畫 */
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        floatUp: {
+                            '0%': { transform: 'translateY(0) scale(0.8)', opacity: 1 },
+                            '100%': { transform: 'translateY(-80px) scale(1.5)', opacity: 0 },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- [AI/Schema] 最強結構化編碼 (GEO/SGE 核心佈局) -->
+    <script type="application/ld-json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "FUFU ELF STUDIO",
+          "url": "https://fufuelf.com/",
+          "logo": "img/cover.png",
+          "sameAs": [
+            "https://www.instagram.com/fufu.elf/",
+            "https://www.threads.net/@fufu.elf"
+          ]
+        },
+        {
+          "@type": "Product",
+          "name": "感知小精靈浮浮 LINE 貼圖",
+          "image": "img/line_store.png",
+          "description": "以情緒感知為核心的療癒系日常貼圖。",
+          "brand": { "@type": "Brand", "name": "Fufu Elf" },
+          "offers": {
+            "@type": "Offer",
+            "url": "https://store.line.me/stickershop/product/33479059/",
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "浮浮會生氣嗎？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "浮浮是純粹的療癒實體。祂們能感知憤怒，但會將憤怒轉化為平靜的藍色能量，幫助您在情緒風暴中找到避風港。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "如何參與夥伴計畫？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "您可以直接在網站下方填寫您的專屬色彩與信箱。夥伴計畫將為您帶來專屬桌布、認養證明，以及浮浮的最新動態。"
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        body { background-color: #fffbf7; color: #3d3d3d; scroll-behavior: smooth; overflow-x: hidden; }
+        .dreamy-gradient { background: radial-gradient(circle at 70% 20%, #fdf2f8 0%, #fffbf7 60%, #e0f2f7 100%); }
+        .glass-header { background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+        .comic-scroller::-webkit-scrollbar { height: 4px; }
+        .comic-scroller::-webkit-scrollbar-thumb { background: #e0f2f7; border-radius: 10px; }
+        .manga-panel { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .manga-panel:hover { transform: scale(1.02); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1); }
+        .particle-container { pointer-events: none; } /* 確保愛心不阻擋點擊 */
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <!-- [UI] 懸浮快速下載球 (手機版專屬，避開右下角 Widget) -->
+    <a href="https://store.line.me/stickershop/product/33479059/" target="_blank" class="fixed bottom-[50px] right-6 z-[50] md:hidden w-14 h-14 bg-lineGreen text-white rounded-full shadow-2xl border-2 border-white flex items-center justify-center animate-float-slow hover:scale-110 transition-transform" aria-label="下載貼圖">
+        <i data-lucide="message-circle" class="w-7 h-7"></i>
+    </a>
+
+    <!-- [UI] 返回頂部按鈕 (滾動顯示) -->
+    <button id="back-to-top" class="fixed bottom-[110px] right-7 z-[90] w-12 h-12 bg-white text-gray-400 rounded-full shadow-xl border border-gray-100 flex items-center justify-center opacity-0 translate-y-4 pointer-events-none transition-all duration-300 hover:text-fufuCyan hover:bg-fufuBlue focus:outline-none" aria-label="返回頂部">
+        <i data-lucide="arrow-up" class="w-6 h-6"></i>
+    </button>
+
+    <!-- [UI] 頂部導覽列 -->
+    <nav class="fixed w-full z-50 glass-header py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center relative">
+            <a href="#" class="flex items-center gap-3">
+                <img src="img/logo.png" alt="Logo" class="w-16 h-10">
+                <span class="font-maru font-bold text-xl tracking-tighter">感知小精靈浮浮</span>
+            </a>
+            
+            <!-- 電腦版選單 -->
+            <div class="hidden lg:flex gap-10 font-maru font-medium text-sm tracking-widest">
+                <a href="#gallery" class="hover:text-fufuCyan transition-colors">視覺宇宙</a>
+                <a href="#manga" class="hover:text-fufuCyan transition-colors">連載漫畫</a>
+                <a href="#about" class="hover:text-fufuCyan transition-colors">關於浮浮</a>
+                <a href="#faq" class="hover:text-fufuCyan transition-colors text-gray-500">常見問題</a>
+                <a href="#join" class="text-pink-500 hover:text-pink-600 font-bold flex items-center gap-1"><i data-lucide="heart" class="w-4 h-4"></i> 夥伴計畫</a>
+            </div>
+
+            <!-- 右側按鈕群與手機版漢堡選單 -->
+            <div class="flex items-center gap-4">
+                <a href="https://store.line.me/stickershop/product/33479059/" target="_blank" class="hidden md:flex bg-lineGreen text-white px-6 py-2.5 rounded-full font-bold hover:scale-105 transition shadow-lg items-center gap-2 text-sm">
+                    <i data-lucide="smile" class="w-4 h-4"></i> 下載貼圖
+                </a>
+                <!-- 漢堡按鈕 (僅在手機平板顯示) -->
+                <button id="mobile-menu-btn" class="lg:hidden text-fufuText hover:text-fufuCyan focus:outline-none p-2 rounded-lg bg-white/50 backdrop-blur">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- 手機版下拉選單 (預設隱藏) -->
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-xl transition-all duration-300">
+            <div class="flex flex-col py-6 px-6 font-maru font-medium text-center space-y-6 text-lg">
+                <a href="#gallery" class="mobile-link text-gray-600 hover:text-fufuCyan transition-colors">視覺宇宙</a>
+                <a href="#manga" class="mobile-link text-gray-600 hover:text-fufuCyan transition-colors">連載漫畫</a>
+                <a href="#about" class="mobile-link text-gray-600 hover:text-fufuCyan transition-colors">關於浮浮</a>
+                <a href="#faq" class="mobile-link text-gray-600 hover:text-fufuCyan transition-colors">常見問題</a>
+                <a href="#join" class="mobile-link text-pink-500 font-bold flex items-center justify-center gap-2"><i data-lucide="heart" class="w-5 h-5"></i> 夥伴計畫</a>
+                <div class="pt-4 border-t border-gray-100">
+                    <a href="https://store.line.me/stickershop/product/33479059/" target="_blank" class="mobile-link inline-flex bg-lineGreen text-white px-8 py-3 rounded-full font-bold shadow-lg items-center gap-2 text-base">
+                        <i data-lucide="smile" class="w-5 h-5"></i> 下載貼圖
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- [Header] Hero 主視覺區塊 -->
+    <header class="pt-48 pb-32 px-6 dreamy-gradient relative overflow-hidden">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 relative z-10">
+            <div class="flex-1 text-center lg:text-left" data-aos="fade-up">
+                <div class="inline-flex items-center gap-2 bg-white/80 px-4 py-1.5 rounded-full text-xs font-bold text-fufuCyan mb-8 shadow-sm">
+                    ✨ 來自雲端的感知小精靈
+                </div>
+                <h1 class="font-maru text-5xl lg:text-7xl font-bold mb-8 leading-[1.2]">
+                    感知你的情緒<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-fufuCyan to-pink-400">治癒你的每一天。</span>
+                </h1>
+                <p class="text-lg text-gray-500 mb-12 leading-relaxed max-w-xl mx-auto lg:mx-0 font-light">
+                    在這個喧囂的世界裡，總有一個角落為你保留安靜。<br>
+                    來自雲端的<strong>浮浮 (Fufu Elf)</strong>，能透過心形耳朵感知你的情緒，<br>
+                    用最柔軟的陪伴，接住你所有的疲憊與不安。
+                </p>
+                <div class="flex flex-wrap justify-center lg:justify-start gap-6">
+                    <a href="#join" class="px-10 py-4 bg-fufuText text-white rounded-2xl font-bold hover:shadow-2xl transition-all hover:-translate-y-1">領取初次見面禮</a>
+                    <div class="flex items-center gap-5">
+                        <!-- IG Icon (高質感漸層修復版) -->
+                        <a href="https://www.instagram.com/fufu.elf/" target="_blank" class="relative w-12 h-12 flex items-center justify-center bg-white rounded-2xl shadow-sm hover:scale-105 transition-all duration-300 group overflow-hidden" aria-label="Instagram">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5 text-gray-400 group-hover:text-white transition-colors duration-300 relative z-10 group-hover:scale-110" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/></svg>
+                        </a>
+                        <a href="https://www.threads.net/@fufu.elf" target="_blank" class="relative w-12 h-12 flex items-center justify-center bg-white rounded-2xl shadow-sm hover:scale-105 transition-all duration-300 group overflow-hidden" aria-label="Threads">
+                            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <i data-lucide="at-sign" class="w-5 h-5 text-gray-400 group-hover:text-white transition-colors duration-300 relative z-10 group-hover:scale-110"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-1 flex justify-center items-center relative" data-aos="zoom-in">
+                <img src="img/fufu.png" alt="感知小精靈浮浮 正面全身立繪" class="w-full max-w-md drop-shadow-2xl animate-float-slow">
+            </div>
+        </div>
+    </header>
+
+    <!-- [Gallery] 視覺宇宙 (左右滑動海報區) -->
+    <section id="gallery" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4" data-aos="fade-right">
+                <div>
+                    <h2 class="font-maru text-4xl font-bold mb-4">視覺宇宙 <span class="text-fufuCyan text-lg ml-4 tracking-widest uppercase">Gallery</span></h2>
+                    <p class="text-gray-400">滑動探索浮浮的療癒世界，每一張都是來自雲端的溫暖。</p>
+                </div>
+                <div class="flex gap-2 text-gray-300 animate-pulse">
+                    <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                    <i data-lucide="mouse" class="w-6 h-6"></i>
+                    <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                </div>
+            </div>
+            
+            <div class="comic-scroller flex overflow-x-auto snap-x snap-mandatory gap-8 pb-8 -mx-6 px-6 md:mx-0 md:px-0" data-aos="fade-up">
+                <!-- 第一張海報，無 V1 則自動 fallback 到 V2 -->
+                <div class="flex-none w-[85%] md:w-[75%] lg:w-[60%] snap-center relative group">
+                    <div class="rounded-[2.5rem] overflow-hidden shadow-xl border-[12px] border-[#fff9f2] group-hover:border-fufuBlue transition-colors duration-500">
+                        <img src="img/poster_v2.png" alt="浮浮視覺海報 2" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="absolute bottom-8 left-8 bg-white/90 backdrop-blur px-6 py-3 rounded-2xl shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
+                        <p class="font-bold text-fufuCyan text-sm">✦ 浮浮情報</p>
+                        <p class="text-xs text-gray-500">4月7日浮浮公開發表</p>
+                    </div>
+                </div>
+
+                <!-- 第二張海報 -->
+                <div class="flex-none w-[85%] md:w-[75%] lg:w-[60%] snap-center relative group">
+                    <div class="rounded-[2.5rem] overflow-hidden shadow-xl border-[12px] border-[#fff9f2] group-hover:border-fufuPink transition-colors duration-500">
+                        <img src="img/poster_v1.png" onerror="this.src='img/poster_v2.png'" alt="浮浮視覺海報 1" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="absolute bottom-8 left-8 bg-white/90 backdrop-blur px-6 py-3 rounded-2xl shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
+                        <p class="font-bold text-fufuCyan text-sm">✦ 浮浮情報</p>
+                        <p class="text-xs text-gray-500">四月即將公佈的是？</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- [Manga] 互動連載系統 -->
+    <section id="manga" class="py-32 px-6 bg-fufuWarm relative">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-maru text-4xl font-bold mb-16" data-aos="fade-right">故事連載 <small class="text-fufuCyan text-lg ml-4 tracking-widest uppercase">Story</small></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 第一話 卡片 -->
+                <div class="group cursor-pointer bg-white rounded-3xl p-4 shadow-sm hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-pink-50" onclick="openComicModal()">
+                    <div class="relative overflow-hidden rounded-2xl aspect-[4/3] mb-6">
+                        <img src="img/comic_01/p1.png" alt="第一話封面" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+                            <div class="bg-white text-fufuText px-6 py-3 rounded-full font-bold flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all shadow-lg">
+                                <i data-lucide="book-open" class="w-4 h-4"></i> 詳細閱讀
+                            </div>
+                        </div>
+                        <div class="absolute top-4 left-4 bg-fufuCyan text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-md">Vol.01</div>
+                    </div>
+                    <div class="px-3 pb-3">
+                        <h3 class="font-bold text-xl mb-2 group-hover:text-fufuCyan transition-colors">感知小精靈浮浮的誕生</h3>
+                        <p class="text-gray-400 text-sm line-clamp-2 leading-relaxed">在寂靜的星空下，一朵失去色彩的雲朵降臨了世界...</p>
+                    </div>
+                </div>
+
+                <!-- 第二話 預告 -->
+                <div class="bg-white/60 rounded-3xl p-4 shadow-sm border border-dashed border-gray-200 relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-[url('img/comic_01/p3.png')] bg-cover bg-center opacity-10 grayscale blur-sm"></div>
+                    <div class="relative z-10 flex flex-col h-full">
+                        <div class="relative overflow-hidden rounded-2xl aspect-[4/3] mb-6 bg-gray-50 flex flex-col items-center justify-center border border-gray-100">
+                            <i data-lucide="lock" class="w-10 h-10 text-gray-300 mb-3"></i>
+                            <span class="text-gray-400 font-bold text-sm tracking-widest uppercase">Coming Soon</span>
+                            <div class="absolute top-4 left-4 bg-gray-400 text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-md">Vol.02 預告</div>
+                        </div>
+                        <div class="px-3 pb-3 flex-grow flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-xl mb-2 text-gray-500">未知的雲端信號</h3>
+                                <p class="text-gray-400 text-sm italic">浮浮感知到了另一種微弱的頻率，那會是什麼呢？</p>
+                            </div>
+                            <div class="mt-6 inline-flex items-center gap-2 text-xs font-bold text-pink-400 bg-pink-50 px-3 py-2 rounded-lg self-start">
+                                <i data-lucide="bell" class="w-4 h-4"></i> 加入夥伴計畫獲取通知
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- [Details] 角色設定 -->
+    <section id="about" class="py-32 px-6 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-24">
+            <div class="flex-1 relative" data-aos="fade-right">
+                <div class="relative group">
+                    <img src="img/fufu_back.png" alt="浮浮背面設定圖 - 圓滾滾的尾巴" class="w-full max-w-sm mx-auto group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute -top-4 -right-4 bg-white px-5 py-3 rounded-3xl shadow-xl border border-pink-100 transform rotate-12">
+                        <span class="text-xs font-bold text-pink-400 uppercase tracking-widest">浮浮的背影</span>
+                    </div>
+                </div>
+                <div class="absolute -z-10 top-0 left-0 w-full h-full bg-fufuPink rounded-full blur-[120px] opacity-30"></div>
+            </div>
+            <div class="flex-1" data-aos="fade-left">
+                <h2 class="font-maru text-4xl font-bold mb-10 leading-tight">每一個細節，<br><span class="text-fufuCyan">都是治癒的開端。</span></h2>
+                <div class="space-y-10">
+                    <div class="flex gap-6">
+                        <div class="w-14 h-14 bg-fufuBlue rounded-[1.5rem] flex-shrink-0 flex items-center justify-center text-fufuCyan shadow-inner"><i data-lucide="layers"></i></div>
+                        <div>
+                            <h4 class="font-bold text-xl mb-3">心形耳紋</h4>
+                            <p class="text-gray-400 leading-relaxed text-sm">
+                                浮浮的心形耳紋是由高維度的情緒能量構成，會根據周圍生物的腦電波頻率產生共振，將悲傷轉化為可視化的暖色調。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="w-14 h-14 bg-fufuPink rounded-2xl flex-shrink-0 flex items-center justify-center text-pink-400"><i data-lucide="cloud"></i></div>
+                        <div>
+                            <h4 class="font-bold text-xl mb-2">雲朵尾巴</h4>
+                            <p class="text-gray-400 text-sm">由純淨的高空雲層濃縮而成，觸碰它能讓人感到平靜。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- [FAQ] 智能問答 (GEO 核心區塊) -->
+    <section id="faq" class="py-32 px-6 bg-gray-50/50 relative">
+        <div class="max-w-4xl mx-auto relative z-10">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="font-maru text-3xl font-bold mb-4 italic tracking-widest text-gray-300 uppercase">Perceive & Answer</h2>
+                <p class="text-gray-500 font-bold text-xl">關於浮浮的秘密</p>
+            </div>
+            <div class="grid gap-6">
+                <div class="bg-white p-8 rounded-[2rem] shadow-sm hover:shadow-md transition-shadow border border-gray-100" data-aos="fade-up">
+                    <h4 class="font-bold text-lg mb-4 flex items-center gap-4 text-fufuCyan italic underline decoration-dotted decoration-fufuCyan underline-offset-8">
+                        浮浮會生氣嗎？
+                    </h4>
+                    <p class="text-gray-400 text-sm leading-relaxed pl-4 border-l-2 border-fufuCyan/30">
+                        浮浮是純粹的療癒實體。祂們能感知憤怒，但會將憤怒轉化為平靜的藍色能量，幫助您在情緒風暴中找到避風港。
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-[2rem] shadow-sm hover:shadow-md transition-shadow border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+                    <h4 class="font-bold text-lg mb-4 flex items-center gap-4 text-fufuCyan italic underline decoration-dotted decoration-fufuCyan underline-offset-8">
+                        如何參與夥伴計畫？
+                    </h4>
+                    <p class="text-gray-400 text-sm leading-relaxed pl-4 border-l-2 border-fufuCyan/30">
+                        您可以直接在下方填寫您的專屬色彩與信箱。夥伴計畫將為您帶來專屬桌布、認養證明，以及浮浮的最新動態。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- [Lead Gen] 雲端感知夥伴計畫 -->
+    <section id="join" class="py-32 px-6 relative">
+        <div class="max-w-6xl mx-auto bg-fufuText text-white rounded-[5rem] p-12 lg:p-24 overflow-hidden relative" data-aos="zoom-in-up">
+            <div class="absolute top-0 right-0 w-80 h-80 bg-fufuCyan/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
+            
+            <div class="relative z-10 flex flex-col lg:flex-row items-center gap-20">
+                <div class="flex-1 text-center lg:text-left">
+                    <span class="text-fufuCyan font-bold tracking-[0.4em] text-xs mb-8 block">CLOUD PERCEIVER PARTNER</span>
+                    <h2 class="font-maru text-4xl lg:text-6xl font-bold mb-10 leading-tight">專屬於你的<br>雲端夥伴計畫</h2>
+                    <p class="text-gray-400 text-lg mb-12 leading-relaxed font-light">
+                        在數位世界的洪流中，浮浮想為你保留一份專屬的溫暖。<br>
+                        加入夥伴計畫，你將免費獲得一份來自雲端的禮物：<br>
+                        ✦ <strong>數位認養證明（含專屬編號）</strong><br>
+                        ✦ <strong>每月限定療癒桌布 (手機/平板)</strong><br>
+                        ✦ <strong>漫畫新篇章優先推播</strong>
+                    </p>
+                </div>
+                
+                <div class="w-full lg:w-[480px] bg-white p-12 rounded-[4rem] text-fufuText shadow-2xl">
+                    <h3 class="font-maru text-2xl font-bold mb-8 text-center">領取你的初次見面禮</h3>
+                    <form id="partner-form" class="space-y-6">
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-bold text-gray-400 tracking-widest uppercase ml-4">你的暱稱</label>
+                            <input type="text" name="nickname" placeholder="怎麼稱呼夥伴呢？" class="w-full px-8 py-5 bg-fufuWarm border-none rounded-2xl focus:ring-2 focus:ring-fufuCyan outline-none transition-all font-medium" required>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-bold text-gray-400 tracking-widest uppercase ml-4">E-Mail</label>
+                            <input type="email" name="email" placeholder="夥伴的傳遞信箱" class="w-full px-8 py-5 bg-fufuWarm border-none rounded-2xl focus:ring-2 focus:ring-fufuCyan outline-none transition-all font-medium" required>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-bold text-gray-400 tracking-widest uppercase ml-4">今天的色彩</label>
+                            <select name="feeling" class="w-full px-8 py-5 bg-fufuWarm border-none rounded-2xl focus:ring-2 focus:ring-fufuCyan outline-none transition-all font-medium text-gray-400" required>
+                                <option value="" disabled selected>你今天的心情是什麼顏色？</option>
+                                <option value="warm">暖黃色 (治癒)</option>
+                                <option value="joy">粉嫩色 (喜悅)</option>
+                                <option value="calm">水藍色 (平靜)</option>
+                                <option value="gray">淺灰色 (需要抱抱)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="w-full py-5 bg-fufuText text-white font-bold rounded-2xl shadow-xl hover:bg-black transition-all transform hover:-translate-y-1 active:scale-95 flex justify-center items-center gap-2">
+                            ✦ 領取數位禮包並加入
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- [Footer] 品牌頁尾與社群連結 -->
+    <footer class="py-24 px-6 bg-white border-t border-gray-50 overflow-hidden relative">
+        <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-fufuBlue rounded-full blur-3xl opacity-30 -z-10"></div>
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-20">
+                <!-- 品牌資訊 -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="img/logo.png" alt="FUFU ELF Logo" class="w-32 h-20">
+                        <h4 class="font-maru text-2xl font-bold tracking-tighter">FUFU ELF STUDIO</h4>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 italic">感知你的情緒，治癒你的每一天。<br>來自雲端的守護，陪伴你的喜怒哀樂。</p>
+                </div>
+                <!-- 快速連結 -->
+                <div class="text-center md:text-left">
+                    <h5 class="font-bold text-sm text-gray-300 tracking-[0.3em] uppercase mb-8">快速導覽</h5>
+                    <ul class="space-y-4">
+                        <li><a href="#about" class="text-gray-500 hover:text-fufuCyan transition font-medium text-sm">關於浮浮</a></li>
+                        <li><a href="#manga" class="text-gray-500 hover:text-fufuCyan transition font-medium text-sm">連載漫畫</a></li>
+                        <li><a href="#join" class="text-gray-500 hover:text-fufuCyan transition font-medium text-sm">夥伴計畫</a></li>
+                    </ul>
+                </div>
+                <!-- 商店連結 -->
+                <div class="text-center md:text-left">
+                    <h5 class="font-bold text-sm text-gray-300 tracking-[0.3em] uppercase mb-8">官方商店</h5>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="https://store.line.me/stickershop/product/33479059/" target="_blank" class="flex items-center justify-center md:justify-start gap-2 text-lineGreen hover:opacity-70 transition font-bold text-sm">
+                                <i data-lucide="shopping-bag" class="w-4 h-4"></i> LINE STORE 貼圖
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 社群媒體 -->
+                <div class="text-center md:text-left">
+                    <h5 class="font-bold text-sm text-gray-300 tracking-[0.3em] uppercase mb-8">關注我們</h5>
+                    <div class="flex justify-center md:justify-start gap-4">
+                        <a href="https://www.instagram.com/fufu.elf/" target="_blank" class="relative w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center shadow-sm hover:scale-105 transition-all duration-300 group overflow-hidden" aria-label="Instagram">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5 text-gray-500 group-hover:text-white transition-colors duration-300 relative z-10 group-hover:scale-110" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/></svg>
+                        </a>
+                        <a href="https://www.threads.net/@fufu.elf" target="_blank" class="relative w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center shadow-sm hover:scale-105 transition-all duration-300 group overflow-hidden" aria-label="Threads">
+                            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <i data-lucide="at-sign" class="w-5 h-5 text-gray-500 group-hover:text-white transition-colors duration-300 relative z-10 group-hover:scale-110"></i>
+                        </a>
+                        <a href="mailto:fufuelfstudio@gmail.com" class="relative w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center shadow-sm hover:scale-105 transition-all duration-300 group overflow-hidden" aria-label="Email">
+                            <div class="absolute inset-0 bg-fufuCyan opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <i data-lucide="mail" class="w-5 h-5 text-gray-500 group-hover:text-white transition-colors duration-300 relative z-10 group-hover:scale-110"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- 版權宣告 -->
+            <div class="pt-10 border-t border-gray-50 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-4 text-[10px] font-bold text-gray-300 tracking-[0.2em] uppercase">
+                    <p>©  FUFU ELF STUDIO 2026</p><span class="hidden md:block">|</span><p>ALL RIGHTS RESERVED.</p>
+                </div>
+                <div class="text-[10px] font-bold text-fufuCyan/50 tracking-[0.3em] uppercase">Perceive your warmth, heal your life.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- [Comic Modal] 漫畫沉浸式閱讀器 -->
+    <div id="comic-modal" class="fixed inset-0 z-[200] hidden bg-black/95 backdrop-blur-md overflow-y-auto overscroll-contain transition-opacity duration-300 opacity-0">
+        <button onclick="closeComicModal()" class="fixed top-4 right-4 md:top-8 md:right-8 z-[210] bg-white/10 hover:bg-white/30 text-white p-3 rounded-full backdrop-blur transition-all focus:outline-none">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        <div class="max-w-2xl mx-auto relative pt-16 md:pt-20 pb-32 px-4 md:px-0">
+            <div class="text-center mb-10">
+                <span class="text-fufuCyan font-bold tracking-widest text-sm uppercase mb-2 block">Vol.01</span>
+                <h2 class="text-white font-maru text-3xl font-bold">感知小精靈浮浮的誕生</h2>
+            </div>
+            <div class="flex flex-col gap-0 shadow-2xl rounded-xl overflow-hidden bg-white">
+                <img src="img/comic_01/p1.png" alt="P1" class="w-full h-auto object-cover">
+                <img src="img/comic_01/p2.png" alt="P2" class="w-full h-auto object-cover">
+                <img src="img/comic_01/p3.png" alt="P3" class="w-full h-auto object-cover">
+            </div>
+            <div class="text-center mt-20 text-gray-400 flex flex-col items-center">
+                <div class="w-16 h-1 bg-white/20 rounded-full mb-8"></div>
+                <p class="font-bold italic text-xl mb-6 text-white/50">To be continued...</p>
+                <button onclick="closeComicModal()" class="px-8 py-3 bg-white/10 hover:bg-fufuCyan text-white rounded-full font-bold transition-all text-sm flex items-center gap-2">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i> 返回官網
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- [Widget] 浮浮線上互動小精靈 (常駐右下角) -->
+    <div id="fufu-widget" class="fixed bottom-6 right-6 z-[100] flex flex-col items-end group">
+        <div id="fufu-chat" class="hidden mb-4 mr-2 bg-white p-5 rounded-3xl rounded-br-sm shadow-2xl border border-pink-50 max-w-[250px] transform origin-bottom-right transition-all relative">
+            <button id="close-chat" class="absolute top-2 left-3 text-gray-300 hover:text-gray-500"><i data-lucide="x" class="w-4 h-4"></i></button>
+            <p class="text-xs font-bold text-fufuCyan mb-1 text-right">浮浮感知</p>
+            <p id="fufu-message" class="text-sm text-gray-600 leading-relaxed font-medium">哈囉！今天的心情是什麼顏色呢？✨</p>
+            <button id="fufu-interact-btn" class="mt-4 w-full py-2 bg-fufuPink text-pink-500 rounded-xl text-xs font-bold hover:bg-pink-100 transition flex items-center justify-center gap-1">
+                <i data-lucide="hand" class="w-3 h-3"></i> 摸摸頭
+            </button>
+        </div>
+        
+        <button id="fufu-avatar-btn" class="relative hover:scale-110 transition-transform animate-float-slow focus:outline-none">
+            <img id="fufu-avatar-img" src="img/fufu_normal.png" alt="呼叫浮浮" class="w-24 h-20">
+            <span class="absolute top-0 right-0 flex h-4 w-4">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-4 w-4 bg-pink-500 border-2 border-white"></span>
+            </span>
+        </button>
+        
+        <!-- 愛心特效生成容器 -->
+        <div id="particle-container" class="absolute bottom-16 right-8 pointer-events-none z-[110]"></div>
+    </div>
+
+    <!-- [Scripts] 邏輯互動區 -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // 確保網頁載入後才執行渲染
+        document.addEventListener("DOMContentLoaded", () => {
+            // 1. 初始化 AOS
+            AOS.init({ once: true, duration: 800 });
+            
+            // 2. 初始化 Lucide
+            lucide.createIcons();
+
+            // 3. 手機版導覽列 (Hamburger Menu)
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            let isMobileMenuOpen = false;
+
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    isMobileMenuOpen = !isMobileMenuOpen;
+                    if (isMobileMenuOpen) {
+                        mobileMenu.classList.remove('hidden');
+                        mobileMenuBtn.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
+                    } else {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+                    }
+                    lucide.createIcons();
+                });
+
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        isMobileMenuOpen = false;
+                        mobileMenuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+                        lucide.createIcons();
+                    });
+                });
+            }
+
+            // 4. 表單提交模擬 (串接 Formspree 直接寄到 Gmail)
+            const formElement = document.getElementById('partner-form');
+            if (formElement) {
+                formElement.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    
+                    const btn = e.target.querySelector('button[type="submit"]');
+                    const originalBtnContent = btn.innerHTML;
+                    
+                    // 呈現載入中狀態
+                    btn.innerHTML = `<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> 正在發送至雲端...`;
+                    btn.disabled = true;
+                    lucide.createIcons();
+
+                    const formData = new FormData(formElement);
+
+                    try {
+                        // 【請注意】將下方的 URL 替換為您在 Formspree 註冊後取得的專屬網址
+                        const response = await fetch('https://formspree.io/f/xwvwdbgl', {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+
+                        if (response.ok) {
+                            // 成功寄出，顯示原本規劃好的療癒成功動畫
+                            e.target.innerHTML = `
+                                <div class="text-center py-10 animate-bounce">
+                                    <div class="w-20 h-20 bg-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
+                                        <i data-lucide="check" class="w-10 h-10"></i>
+                                    </div>
+                                    <p class="font-bold text-xl mb-2 text-fufuText">歡迎加入，夥伴！</p>
+                                    <p class="text-sm text-gray-400">名單已成功發送至您的 Gmail ✨</p>
+                                </div>
+                            `;
+                            lucide.createIcons();
+                        } else {
+                            alert("哎呀，雲端信使迷路了！請稍後再試。");
+                            btn.innerHTML = originalBtnContent;
+                            btn.disabled = false;
+                        }
+                    } catch (error) {
+                        alert("網路連線出現問題，請檢查網路後再試一次！");
+                        btn.innerHTML = originalBtnContent;
+                        btn.disabled = false;
+                    }
+                });
+            }
+
+            // 5. 浮浮 Widget 互動邏輯與粒子特效
+            const fufuAvatarBtn = document.getElementById('fufu-avatar-btn');
+            const fufuAvatarImg = document.getElementById('fufu-avatar-img');
+            const fufuChat = document.getElementById('fufu-chat');
+            const closeChat = document.getElementById('close-chat');
+            const fufuMessage = document.getElementById('fufu-message');
+            const fufuInteractBtn = document.getElementById('fufu-interact-btn');
+            const particleContainer = document.getElementById('particle-container');
+
+            const DEFAULT_AVATAR_SRC = 'img/fufu_normal.png';
+            const HAPPY_AVATAR_SRC = 'img/fufu_happy.png'; // 若有新圖片，直接替換檔名即可
+
+            const fufuGreetings = [
+                "哈囉！今天過得好嗎？需要浮浮的抱抱嗎？☁️",
+                "感知到有夥伴來訪！今天的心情是什麼顏色呢？✨",
+                "深呼吸～不管發生什麼，浮浮都在這裡陪你喔！💕",
+                "耳朵發出了溫暖的光芒，因為見到你很開心！😊"
+            ];
+
+            if(fufuAvatarBtn && fufuChat) {
+                fufuAvatarBtn.addEventListener('click', () => {
+                    fufuChat.classList.toggle('hidden');
+                    if (!fufuChat.classList.contains('hidden')) {
+                        const randomMsg = fufuGreetings[Math.floor(Math.random() * fufuGreetings.length)];
+                        fufuMessage.textContent = randomMsg;
+                        fufuChat.classList.remove('animate-bounce');
+                        void fufuChat.offsetWidth; 
+                        fufuChat.classList.add('animate-bounce');
+                        setTimeout(() => fufuChat.classList.remove('animate-bounce'), 1000);
+                    }
+                });
+            }
+
+            if(closeChat) {
+                closeChat.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    fufuChat.classList.add('hidden');
+                });
+            }
+
+            if(fufuInteractBtn && fufuAvatarImg) {
+                fufuInteractBtn.addEventListener('click', () => {
+                    fufuMessage.innerHTML = "<span class='text-pink-500 font-bold'>感受到溫暖了！🥰 <br><span class='text-xs text-gray-400'>(耳朵感知情緒變化)</span></span>";
+                    fufuInteractBtn.innerHTML = "<i data-lucide='heart' class='w-3 h-3 text-pink-500 fill-current'></i> 療癒光波發射！";
+                    lucide.createIcons();
+                    
+                    fufuAvatarImg.src = HAPPY_AVATAR_SRC; 
+                    
+                    createHeartParticles();
+                    
+                    setTimeout(() => {
+                        fufuInteractBtn.innerHTML = "<i data-lucide='hand' class='w-3 h-3'></i> 摸摸頭";
+                        lucide.createIcons();
+                        fufuAvatarImg.src = DEFAULT_AVATAR_SRC;
+                    }, 3000);
+                });
+            }
+
+            function createHeartParticles() {
+                if(!particleContainer) return;
+                for(let i = 0; i < 3; i++) {
+                    setTimeout(() => {
+                        const heart = document.createElement('div');
+                        heart.innerHTML = '💖';
+                        heart.className = 'absolute text-2xl animate-float-up pointer-events-none drop-shadow-md';
+                        const randomX = Math.floor(Math.random() * 40) - 20; 
+                        heart.style.left = `${randomX}px`;
+                        heart.style.bottom = '0px';
+                        particleContainer.appendChild(heart);
+                        
+                        setTimeout(() => {
+                            if(heart.parentNode) heart.remove();
+                        }, 1500); 
+                    }, i * 200);
+                }
+            }
+
+            // 6. 返回頂部邏輯
+            const backToTopBtn = document.getElementById('back-to-top');
+            if(backToTopBtn) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 500) {
+                        backToTopBtn.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+                    } else {
+                        backToTopBtn.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+                    }
+                });
+                backToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+        });
+
+        // 7. 漫畫彈出視窗全域控制
+        const comicModal = document.getElementById('comic-modal');
+        function openComicModal() {
+            if(!comicModal) return;
+            comicModal.classList.remove('hidden');
+            setTimeout(() => comicModal.classList.remove('opacity-0'), 10);
+            document.body.style.overflow = 'hidden'; 
+        }
+        function closeComicModal() {
+            if(!comicModal) return;
+            comicModal.classList.add('opacity-0');
+            setTimeout(() => {
+                comicModal.classList.add('hidden');
+                document.body.style.overflow = ''; 
+            }, 300);
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && comicModal && !comicModal.classList.contains('hidden')) {
+                closeComicModal();
+            }
+        });
+    </script>
+</body>
+</html>
