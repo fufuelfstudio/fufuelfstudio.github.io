@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 你的自訂樣式 */
+body { background-color: #fffbf7; color: #3d3d3d; scroll-behavior: smooth; overflow-x: hidden; }
+.dreamy-gradient { background: radial-gradient(circle at 70% 20%, #fdf2f8 0%, #fffbf7 60%, #e0f2f7 100%); }
+.glass-header { background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+.comic-scroller::-webkit-scrollbar { height: 4px; }
+.comic-scroller::-webkit-scrollbar-thumb { background: #e0f2f7; border-radius: 10px; }
+.manga-panel { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.manga-panel:hover { transform: scale(1.02); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1); }
+.particle-container { pointer-events: none; }
