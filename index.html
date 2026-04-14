@@ -20,7 +20,7 @@
 
     <link rel="icon" type="image/png" href="/img/favicon.png">
     <link rel="apple-touch-icon" href="/img/favicon.png">
-
+    
     <meta property="og:type" content="website">
     <meta property="og:title" content="感知小精靈浮浮感知 Elf - 感知溫暖的瞬間">
     <meta property="og:description" content="來自雲端的浮浮，透過心形耳朵感知你的情緒變化。立即加入浮浮的療癒世界。">
@@ -32,46 +32,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    
     <script src="https://unpkg.com/lucide@latest" defer></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        fufuBlue: '#e0f2f7',   /* 品牌淺藍 */
-                        fufuPink: '#fdf2f8',   /* 品牌淺粉 */
-                        fufuWarm: '#fffbf7',   /* 品牌暖白背景 */
-                        fufuText: '#3d3d3d',   /* 主要文字深灰色 */
-                        fufuCyan: '#0ea5e9',   /* 強調色：青色 */
-                        lineGreen: '#06C755',  /* LINE 官方綠色 */
-                    },
-                    fontFamily: {
-                        sans: ['Noto Sans TC', 'sans-serif'],
-                        maru: ['Zen Maru Gothic', 'sans-serif'],
-                    },
-                    animation: {
-                        'float-slow': 'float 10s ease-in-out infinite',
-                        'spin-slow': 'spin 12s linear infinite',
-                        'float-up': 'floatUp 1.5s ease-out forwards', /* 愛心噴發動畫 */
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        },
-                        floatUp: {
-                            '0%': { transform: 'translateY(0) scale(0.8)', opacity: 1 },
-                            '100%': { transform: 'translateY(-80px) scale(1.5)', opacity: 0 },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-
+    <link href="css/style.css" rel="stylesheet">
     <script type="application/ld-json">
     {
       "@context": "https://schema.org",
@@ -123,17 +87,6 @@
       ]
     }
     </script>
-
-    <style>
-        body { background-color: #fffbf7; color: #3d3d3d; scroll-behavior: smooth; overflow-x: hidden; }
-        .dreamy-gradient { background: radial-gradient(circle at 70% 20%, #fdf2f8 0%, #fffbf7 60%, #e0f2f7 100%); }
-        .glass-header { background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
-        .comic-scroller::-webkit-scrollbar { height: 4px; }
-        .comic-scroller::-webkit-scrollbar-thumb { background: #e0f2f7; border-radius: 10px; }
-        .manga-panel { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .manga-panel:hover { transform: scale(1.02); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1); }
-        .particle-container { pointer-events: none; } /* 確保愛心不阻擋點擊 */
-    </style>
 </head>
 <body class="font-sans antialiased">
     <button id="back-to-top" class="fixed bottom-[110px] right-7 z-[90] w-12 h-12 bg-white text-gray-400 rounded-full shadow-xl border border-gray-100 flex items-center justify-center opacity-0 translate-y-4 pointer-events-none transition-all duration-300 hover:text-fufuCyan hover:bg-fufuBlue focus:outline-none" aria-label="返回頂部">
