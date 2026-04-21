@@ -340,9 +340,9 @@
                     <p class="text-gray-300 text-lg mb-12 leading-relaxed font-light">
                         在數位世界的洪流中，浮浮想為你保留一份專屬的溫暖。<br>
                         加入夥伴計畫，你將免費獲得一份來自雲端的禮物：<br>
-                        ✦ <strong>數位認養證明（含專屬編號）</strong><br>
-                        ✦ <strong>每月限定療癒桌布 (手機/平板)</strong><br>
-                        ✦ <strong>漫畫新篇章優先推播</strong>
+                        ✦ <strong>數位認養夥伴證(含專屬編號)</strong><br>
+                        ✦ <strong>手機療癒桌布(每月發送)</strong><br>
+                        ✦ <strong>連載漫畫新篇章搶先看</strong>
                     </p>
                 </div>
                 
@@ -689,6 +689,38 @@
                 closeComicModal();
             }
         });
+    </script>
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxBQ3W-T3EO2ZY8Kj0sohNwX8m7jFZa0IXyM0FFqbQYyEHdcgXRTCX4Q9r6t14tl0HN8w/exec'; // 部署為 Web App 後取得的網址
+      const form = document.getElementById('partner-form');
+
+      form.addEventListener('submit', e => {
+        e.preventDefault(); // 防止網頁跳轉
+        
+        // 提交中狀態
+        const submitBtn = form.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = "✦ 感知頻率連結中...";
+
+        // 建立傳送資料
+        const formData = new FormData(form);
+
+        fetch(scriptURL, { 
+          method: 'POST', 
+          body: formData
+        })
+        .then(response => {
+          alert('成功連結頻率！請去信箱收件。');
+          form.reset();
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = "✦ 領取數位禮包並加入";
+        })
+        .catch(error => {
+          console.error('Error!', error.message);
+          alert('感知連線失敗，請稍後再試。');
+          submitBtn.disabled = false;
+        });
+      });
     </script>
 </body>
 </html>
