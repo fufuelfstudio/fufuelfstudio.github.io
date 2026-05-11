@@ -223,7 +223,7 @@
             <h2 class="font-maru text-4xl font-bold mb-16" data-aos="fade-right">故事連載 <small class="text-fufuCyan text-lg ml-4 tracking-widest uppercase">Story</small></h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="group cursor-pointer bg-white rounded-3xl p-4 shadow-sm hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-pink-50" onclick="openComicModal()">
+                <div class="group cursor-pointer bg-white rounded-3xl p-4 shadow-sm hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-pink-50" onclick="openComicModal('vol1')">
                     <div class="relative overflow-hidden rounded-2xl aspect-[4/3] mb-6">
                         <img src="img/comic_01_cover.webp" loading="lazy" alt="第一話封面" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
@@ -235,7 +235,23 @@
                     </div>
                     <div class="px-3 pb-3">
                         <h3 class="font-bold text-xl mb-2 group-hover:text-fufuCyan transition-colors">感知小精靈浮浮的誕生</h3>
-                        <p class="text-gray-500 text-sm line-clamp-2 leading-relaxed">在寂靜的星空下，一朵失去色彩的雲朵降臨了世界...</p>
+                        <p class="text-gray-500 text-sm line-clamp-2 leading-relaxed">在寂靜的星空下，一朵失去色彩的雲朵降臨了世界…</p>
+                    </div>
+                </div>
+
+                <div class="group cursor-pointer bg-white rounded-3xl p-4 shadow-sm hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-pink-50" onclick="openComicModal('vol2')">
+                    <div class="relative overflow-hidden rounded-2xl aspect-[4/3] mb-6">
+                        <img src="img/comic_02_cover.webp" loading="lazy" alt="第二話封面" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+                            <div class="bg-white text-fufuText px-6 py-3 rounded-full font-bold flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all shadow-lg">
+                                <i data-lucide="book-open" class="w-4 h-4"></i> 詳細閱讀
+                            </div>
+                        </div>
+                        <div class="absolute top-4 left-4 bg-sky-700 text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-md">Vol.02</div>
+                    </div>
+                    <div class="px-3 pb-3">
+                        <h3 class="font-bold text-xl mb-2 group-hover:text-fufuCyan transition-colors">情緒需要出口</h3>
+                        <p class="text-gray-500 text-sm line-clamp-2 leading-relaxed">在某所國小中，浮浮感知遇到了困境…</p>
                     </div>
                 </div>
 
@@ -245,7 +261,7 @@
                         <div class="relative overflow-hidden rounded-2xl aspect-[4/3] mb-6 bg-gray-50 flex flex-col items-center justify-center border border-gray-100">
                             <i data-lucide="lock" class="w-10 h-10 text-gray-500 mb-3"></i>
                             <span class="text-gray-500 font-bold text-sm tracking-widest uppercase">Coming Soon</span>
-                            <div class="absolute top-4 left-4 bg-gray-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-md">Vol.02 預告</div>
+                            <div class="absolute top-4 left-4 bg-gray-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-md">Vol.03 預告</div>
                         </div>
                         <div class="px-3 pb-3 flex-grow flex flex-col justify-between">
                             <div>
@@ -429,26 +445,23 @@
         </div>
     </footer>
 
+    <!-- [Comic Modal] 閱讀器 -->
     <div id="comic-modal" class="fixed inset-0 z-[200] hidden bg-black/95 backdrop-blur-md overflow-y-auto overscroll-contain transition-opacity duration-300 opacity-0">
-        <button onclick="closeComicModal()" class="fixed top-4 right-4 md:top-8 md:right-8 z-[210] bg-white/10 hover:bg-white/30 text-white p-3 rounded-full backdrop-blur transition-all focus:outline-none">
+        <button onclick="closeComicModal()" class="fixed top-4 right-4 md:top-8 md:right-8 z-[210] bg-white/10 hover:bg-white/30 text-white p-3 rounded-full backdrop-blur transition-all">
             <i data-lucide="x" class="w-6 h-6"></i>
         </button>
         <div class="max-w-2xl mx-auto relative pt-16 md:pt-20 pb-32 px-4 md:px-0">
             <div class="text-center mb-10">
-                <span class="text-fufuCyan font-bold tracking-widest text-sm uppercase mb-2 block">Vol.01</span>
-                <h2 class="text-white font-maru text-3xl font-bold">感知小精靈浮浮的誕生</h2>
+                <span id="modal-vol" class="text-fufuCyan font-bold tracking-widest text-sm uppercase mb-2 block">Vol.01</span>
+                <h2 id="modal-title" class="text-white font-maru text-3xl font-bold">標題讀取中...</h2>
             </div>
-            <div class="flex flex-col gap-0 shadow-2xl rounded-xl overflow-hidden bg-white">
-                <img src="img/comic_01/p1.webp" loading="lazy" alt="P1" class="w-full h-auto object-cover">
-                <img src="img/comic_01/p2.webp" loading="lazy" alt="P2" class="w-full h-auto object-cover">
-                <img src="img/comic_01/p3.webp" loading="lazy" alt="P3" class="w-full h-auto object-cover">
+            <div id="modal-content" class="flex flex-col gap-0 shadow-2xl rounded-xl overflow-hidden bg-white">
+                <!-- 內容會由 JS 動態注入 -->
             </div>
-            <div class="text-center mt-20 text-gray-500 flex flex-col items-center">
-                <div class="w-16 h-1 bg-white/20 rounded-full mb-8"></div>
-                <p class="font-bold italic text-xl mb-6 text-white/50">To be continued...</p>
-                <button onclick="closeComicModal()" class="px-8 py-3 bg-white/10 hover:bg-sky-600 text-white rounded-full font-bold transition-all text-sm flex items-center gap-2">
-                    <i data-lucide="arrow-left" class="w-4 h-4"></i> 返回官網
-                </button>
+            
+            <!-- [Modal Footer] 導覽區塊 -->
+            <div id="modal-footer">
+                <!-- 由 JS 根據是否有上下話動態生成內容 -->
             </div>
         </div>
     </div>
@@ -479,6 +492,111 @@
         document.addEventListener("DOMContentLoaded", () => {
             AOS.init({ once: true, duration: 800 });
             lucide.createIcons();
+
+            // 漫畫資料資料庫
+            const mangaData = {
+                'vol1': {
+                    vol: "Vol.01",
+                    title: "感知小精靈浮浮的誕生",
+                    images: ['img/comic_01/p1.webp', 'img/comic_01/p2.webp', 'img/comic_01/p3.webp'],
+                    prev: null,
+                    next: 'vol2'
+                },
+                'vol2': {
+                    vol: "Vol.02",
+                    title: "情緒需要出口",
+                    images: ['img/comic_02/p1.webp', 'img/comic_02/p2.webp', 'img/comic_02/p3.webp'],
+                    prev: 'vol1',
+                    next: null
+                }
+            };
+
+            const modal = document.getElementById('comic-modal');
+            const modalContent = document.getElementById('modal-content');
+            const modalTitle = document.getElementById('modal-title');
+            const modalVol = document.getElementById('modal-vol');
+            const modalFooter = document.getElementById('modal-footer');
+
+            // 開啟閱讀器
+            window.openComicModal = (volId) => {
+                const data = mangaData[volId];
+                if (!data) return;
+                
+                // 更新標題與章節
+                modalVol.innerText = data.vol;
+                modalTitle.innerText = data.title;
+                
+                // 注入漫畫圖片
+                modalContent.innerHTML = data.images.map(src => `<img src="${src}" class="w-full h-auto">`).join('');
+                
+                // 動態生成 Footer 導覽內容
+                let footerHtml = `
+                    <div class="text-center mt-20">
+                        <div class="w-16 h-1 bg-gray-200 rounded-full mx-auto mb-8"></div>
+                `;
+
+                // 判斷是否顯示 To be continued
+                if (!data.next) {
+                    footerHtml += `<p class="font-maru font-bold italic text-xl mb-10 text-gray-400 tracking-widest">To be continued...</p>`;
+                }
+
+                // 生成上下話連結按鈕
+                footerHtml += `<div class="flex justify-center items-center gap-6 mb-12 font-maru text-sm font-medium tracking-widest">`;
+                
+                // 上一話按鈕
+                if (data.prev) {
+                    footerHtml += `
+                        <button onclick="openComicModal('${data.prev}')" class="text-gray-300 hover:text-fufuCyan transition-colors flex items-center gap-1">
+                            <i data-lucide="chevron-left" class="w-4 h-4"></i> 上一話
+                        </button>
+                    `;
+                } else {
+                    footerHtml += `<span class="text-gray-500 cursor-default">上一話</span>`;
+                }
+
+                footerHtml += `<span class="text-gray-500">|</span>`;
+
+                // 下一話按鈕
+                if (data.next) {
+                    footerHtml += `
+                        <button onclick="openComicModal('${data.next}')" class="text-gray-300 hover:text-fufuCyan transition-colors flex items-center gap-1">
+                            下一話 <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </button>
+                    `;
+                } else {
+                    footerHtml += `<span class="text-gray-500 cursor-default">下一話</span>`;
+                }
+
+                footerHtml += `
+                        </div>
+                        <button onclick="closeComicModal()" class="inline-flex items-center gap-2 px-10 py-4 bg-fufuText text-white rounded-2xl font-bold hover:shadow-2xl transition-all hover:-translate-y-1 hover:bg-fufuCyan">
+                            <i data-lucide="arrow-left" class="w-5 h-5"></i> 返回浮浮官網首頁
+                        </button>
+                    </div>
+                `;
+
+                modalFooter.innerHTML = footerHtml;
+                
+                // 顯示 Modal
+                modal.classList.remove('hidden');
+                setTimeout(() => modal.classList.remove('opacity-0'), 10);
+                document.body.style.overflow = 'hidden';
+                
+                // 如果是切換章節，將捲軸拉回頂部
+                modal.scrollTo({ top: 0, behavior: 'smooth' });
+                
+                // 重新初始化 Lucide 圖示
+                lucide.createIcons();
+            };
+
+            // 關閉閱讀器
+            window.closeComicModal = () => {
+                modal.classList.add('opacity-0');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }, 300);
+            };
 
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -596,11 +714,14 @@
         });
 
         const comicModal = document.getElementById('comic-modal');
-        function openComicModal() {
-            if(!comicModal) return;
-            comicModal.classList.remove('hidden');
-            setTimeout(() => comicModal.classList.remove('opacity-0'), 10);
-            document.body.style.overflow = 'hidden'; 
+        function openComicModal(volId) {
+            const data = mangaData[volId];
+            if (!data) return;
+            
+            modalContent.innerHTML = data.images.map(src => `<img src="${src}" class="w-full h-auto">`).join('');
+            modal.classList.remove('hidden');
+            setTimeout(() => modal.classList.remove('opacity-0'), 10);
+            document.body.style.overflow = 'hidden';
         }
         function closeComicModal() {
             if(!comicModal) return;
