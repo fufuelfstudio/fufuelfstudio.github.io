@@ -222,8 +222,9 @@
         <div class="max-w-7xl mx-auto">
             <h2 class="font-maru text-4xl font-bold mb-16" data-aos="fade-right">故事連載 <small class="text-fufuCyan text-lg ml-4 tracking-widest uppercase">Story</small></h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="group cursor-pointer bg-white rounded-3xl p-4 shadow-sm hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-pink-50" onclick="openComicModal('vol1')">
+            <div id="comic-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Vol.01 -->
+                <div class="comic-item group cursor-pointer bg-white rounded-3xl p-4 shadow-sm hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-pink-50" onclick="openComicModal('vol1')">
                     <div class="relative overflow-hidden rounded-2xl aspect-[4/3] mb-6">
                         <img src="img/comic_01_cover.webp" loading="lazy" alt="第一話封面" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
@@ -239,7 +240,8 @@
                     </div>
                 </div>
 
-                <div class="group cursor-pointer bg-white rounded-3xl p-4 shadow-sm hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-pink-50" onclick="openComicModal('vol2')">
+                <!-- Vol.02 -->
+                <div class="comic-item group cursor-pointer bg-white rounded-3xl p-4 shadow-sm hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-pink-50" onclick="openComicModal('vol2')">
                     <div class="relative overflow-hidden rounded-2xl aspect-[4/3] mb-6">
                         <img src="img/comic_02_cover.webp" loading="lazy" alt="第二話封面" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
@@ -255,13 +257,31 @@
                     </div>
                 </div>
 
-                <div class="bg-white/60 rounded-3xl p-4 shadow-sm border border-dashed border-gray-200 relative overflow-hidden group">
+                <!-- Vol.03 (將 display: none 加入行內樣式，防止載入時閃爍，後續交由 JS 精準控制) -->
+                <div class="comic-item group cursor-pointer bg-white rounded-3xl p-4 shadow-sm hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-pink-50" style="display: none;" onclick="openComicModal('vol3')">
+                    <div class="relative overflow-hidden rounded-2xl aspect-[4/3] mb-6">
+                        <img src="img/comic_03_cover.webp" loading="lazy" alt="第三話封面" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+                            <div class="bg-white text-fufuText px-6 py-3 rounded-full font-bold flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all shadow-lg">
+                                <i data-lucide="book-open" class="w-4 h-4"></i> 詳細閱讀
+                            </div>
+                        </div>
+                        <div class="absolute top-4 left-4 bg-sky-700 text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-md">Vol.03</div>
+                    </div>
+                    <div class="px-3 pb-3">
+                        <h3 class="font-bold text-xl mb-2 group-hover:text-fufuCyan transition-colors">大人們的心跳聲</h3>
+                        <p class="text-gray-500 text-sm line-clamp-2 leading-relaxed">浮浮走在路上，突然間發現了一個充滿情緒的地方…</p>
+                    </div>
+                </div>
+
+                <!-- Vol.04 -->
+                <div class="comic-item bg-white/60 rounded-3xl p-4 shadow-sm border border-dashed border-gray-200 relative overflow-hidden group" style="display: none;">
                     <div class="absolute inset-0 bg-[url('img/comic_01_cover.webp')] bg-cover bg-center opacity-10 grayscale blur-sm"></div>
                     <div class="relative z-10 flex flex-col h-full">
                         <div class="relative overflow-hidden rounded-2xl aspect-[4/3] mb-6 bg-gray-50 flex flex-col items-center justify-center border border-gray-100">
                             <i data-lucide="lock" class="w-10 h-10 text-gray-500 mb-3"></i>
                             <span class="text-gray-500 font-bold text-sm tracking-widest uppercase">Coming Soon</span>
-                            <div class="absolute top-4 left-4 bg-gray-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-md">Vol.03 預告</div>
+                            <div class="absolute top-4 left-4 bg-gray-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-md">Vol.04 預告</div>
                         </div>
                         <div class="px-3 pb-3 flex-grow flex flex-col justify-between">
                             <div>
@@ -274,6 +294,13 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            
+            <!-- 展開/收合按鈕區塊 -->
+            <div class="mt-20 flex justify-center">
+                <button id="expand-comic-btn" class="inline-flex items-center gap-2 px-10 py-3 rounded-full border-2 border-pink-400 text-pink-500 font-bold hover:bg-pink-50 hover:text-pink-600 transition-colors shadow-sm">
+                    看更多連載 <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                </button>
             </div>
         </div>
     </section>
@@ -507,6 +534,13 @@
                     title: "情緒需要出口",
                     images: ['img/comic_02/p1.webp', 'img/comic_02/p2.webp', 'img/comic_02/p3.webp'],
                     prev: 'vol1',
+                    next: 'vol3'
+                },
+                'vol3': {
+                    vol: "Vol.03",
+                    title: "大人們的心跳聲",
+                    images: ['img/comic_03/p1.webp', 'img/comic_03/p2.webp', 'img/comic_03/p3.webp'],
+                    prev: 'vol2',
                     next: null
                 }
             };
@@ -586,7 +620,7 @@
                 modal.scrollTo({ top: 0, behavior: 'smooth' });
                 
                 // 重新初始化 Lucide 圖示
-                lucide.createIcons();
+                if (typeof lucide !== 'undefined') lucide.createIcons();
             };
 
             // 關閉閱讀器
@@ -597,6 +631,68 @@
                     document.body.style.overflow = '';
                 }, 300);
             };
+
+            // ESC 鍵關閉閱讀器
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                    window.closeComicModal();
+                }
+            });
+
+            // ====== 處理漫畫展開/收合邏輯 ======
+            const expandBtn = document.getElementById('expand-comic-btn');
+            const allComics = document.querySelectorAll('.comic-item');
+            let isExpanded = false;
+
+            // 用 JS 精準判斷目前該顯示幾個
+            function renderComics() {
+                const isDesktop = window.innerWidth >= 1024;
+                const visibleCount = isDesktop ? 3 : 2;
+                
+                allComics.forEach((item, index) => {
+                    if (isExpanded || index < visibleCount) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+                
+                if (expandBtn) {
+                    if (isExpanded) {
+                        expandBtn.innerHTML = '收起連載 <i data-lucide="chevron-up" class="w-4 h-4"></i>';
+                    } else {
+                        expandBtn.innerHTML = '看更多連載 <i data-lucide="chevron-down" class="w-4 h-4"></i>';
+                    }
+                    if (typeof lucide !== 'undefined') lucide.createIcons();
+                }
+            }
+
+            if (expandBtn && allComics.length > 2) {
+                // 初始載入時判斷
+                renderComics();
+                
+                // 當視窗縮放且未展開時，即時更新顯示數量
+                window.addEventListener('resize', () => {
+                    if (!isExpanded) {
+                        renderComics();
+                    }
+                });
+
+                // 按鈕點擊切換
+                expandBtn.addEventListener('click', () => {
+                    isExpanded = !isExpanded;
+                    renderComics();
+                    
+                    if (!isExpanded) {
+                        // 收合時讓畫面稍微捲動回漫畫區塊頂部
+                        document.getElementById('manga').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            } else if (expandBtn) {
+                // 如果總數少於 2，不需按鈕
+                expandBtn.parentElement.style.display = 'none';
+            }
+            // ===================================
 
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -613,7 +709,7 @@
                         mobileMenu.classList.add('hidden');
                         mobileMenuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
                     }
-                    lucide.createIcons();
+                    if (typeof lucide !== 'undefined') lucide.createIcons();
                 });
 
                 mobileLinks.forEach(link => {
@@ -621,7 +717,7 @@
                         mobileMenu.classList.add('hidden');
                         isMobileMenuOpen = false;
                         mobileMenuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
-                        lucide.createIcons();
+                        if (typeof lucide !== 'undefined') lucide.createIcons();
                     });
                 });
             }
@@ -669,12 +765,12 @@
                 fufuInteractBtn.addEventListener('click', () => {
                     fufuMessage.innerHTML = "<span class='text-pink-500 font-bold'>感受到溫暖了！🥰 <br><span class='text-xs text-gray-500'>(耳朵感知情緒變化)</span></span>";
                     fufuInteractBtn.innerHTML = "<i data-lucide='heart' class='w-3 h-3 text-pink-500 fill-current'></i> 療癒光波發射！";
-                    lucide.createIcons();
+                    if (typeof lucide !== 'undefined') lucide.createIcons();
                     fufuAvatarImg.src = HAPPY_AVATAR_SRC; 
                     createHeartParticles();
                     setTimeout(() => {
                         fufuInteractBtn.innerHTML = "<i data-lucide='hand' class='w-3 h-3'></i> 摸摸頭";
-                        lucide.createIcons();
+                        if (typeof lucide !== 'undefined') lucide.createIcons();
                         fufuAvatarImg.src = DEFAULT_AVATAR_SRC;
                     }, 3000);
                 });
@@ -710,30 +806,6 @@
                 backToTopBtn.addEventListener('click', () => {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 });
-            }
-        });
-
-        const comicModal = document.getElementById('comic-modal');
-        function openComicModal(volId) {
-            const data = mangaData[volId];
-            if (!data) return;
-            
-            modalContent.innerHTML = data.images.map(src => `<img src="${src}" class="w-full h-auto">`).join('');
-            modal.classList.remove('hidden');
-            setTimeout(() => modal.classList.remove('opacity-0'), 10);
-            document.body.style.overflow = 'hidden';
-        }
-        function closeComicModal() {
-            if(!comicModal) return;
-            comicModal.classList.add('opacity-0');
-            setTimeout(() => {
-                comicModal.classList.add('hidden');
-                document.body.style.overflow = ''; 
-            }, 300);
-        }
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && comicModal && !comicModal.classList.contains('hidden')) {
-                closeComicModal();
             }
         });
     </script>
